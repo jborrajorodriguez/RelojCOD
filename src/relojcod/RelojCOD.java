@@ -5,7 +5,7 @@ package relojcod;
 public class RelojCOD {
 
     public static void main(String[] args) {
-        new RelojFun();
+        RelojFun.tiempo();
    
         
     }
