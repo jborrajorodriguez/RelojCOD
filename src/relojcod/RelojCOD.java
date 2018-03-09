@@ -8,27 +8,7 @@ import javax.swing.JOptionPane;
 public class RelojCOD {
 
     public static void main(String[] args) {
-        int m=0;
-        do {   m=Integer.parseInt(JOptionPane.showInputDialog("Opcion"));
-            switch (m) {
-                case 1:
-                    RelojFun.tiempo();
-                    break;
-                case 2:
-                    RelojFun.Alarma();
-                    break;    
-                    
-                    
-                default:
-                    throw new AssertionError();
-            }
-            
-        }
-        while (m!=0);
-      
-      
-        
-        
+        Botonera.selector();
     }
 
 }
