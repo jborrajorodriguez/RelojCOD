@@ -3,6 +3,7 @@ package relojcod;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -33,6 +34,23 @@ public class RelojFun {
             }
         }while(1==1);
 
+    }
+    /**
+     * metodo que añade la hora
+     * @return 
+     */
+    public static int alarmaHora(){
+        int hor=Integer.parseInt(JOptionPane.showInputDialog("Añade la hora"));
+        return hor;
+    }
+    
+    /**
+     * Metodo que añade los minutos para la alarma
+     * @return 
+     */
+     public static int alarmaMin(){
+        int min=Integer.parseInt(JOptionPane.showInputDialog("Añade los min"));
+        return min;
     }
    
     
