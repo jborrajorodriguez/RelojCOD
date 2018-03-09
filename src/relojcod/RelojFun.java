@@ -1,6 +1,7 @@
 package relojcod;
 
 import java.util.Date;
+import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -10,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class RelojFun {
 
-    private static int h, m, s,hor,min;
+    protected static int h, m, s,hor,min;
     private static Date d;
     /**
      * Metodo tiempo
@@ -18,7 +19,7 @@ public class RelojFun {
      * Es un metodo estatico que muestra las horas y actua la alarma.
      */
     public static void tiempo() {
-         
+         Timer time=new Timer();
        
         do {
 
@@ -28,10 +29,7 @@ public class RelojFun {
                 m=d.getMinutes();
                 s=d.getSeconds();
                 Display.mostrar(h,m,s);
-                
-                 if(h==hor&&m==min){
-            System.out.println("Alarmaaaaaaaaaa");
-        }
+                time.schedule(new Alarma(),0,1000);
                 Thread.sleep(1000);
                 
             } catch (InterruptedException ex) {
@@ -42,14 +40,5 @@ public class RelojFun {
         while (1==1);
 
     }
-    /**
-     * Metodo Alarma
-     * 
-     * Es un metodo estatico encargo de dar valores a las horas y minutos de la alarma.
-     */
-    public static void Alarma(){
-        hor=Integer.parseInt(JOptionPane.showInputDialog("Hora de la alarma"));
-        min=Integer.parseInt(JOptionPane.showInputDialog("minutos de la alarma")); 
-        
-    }
+    
 }
