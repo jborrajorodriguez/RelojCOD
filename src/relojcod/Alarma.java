@@ -52,8 +52,10 @@ public class Alarma extends TimerTask {
     public static boolean encendido() {
         if(al==false){
             al=true;
+            System.out.println("Activada");
         }else{
             al=false;
+            System.out.println("Desactivada");
         }
         return al;
     }
