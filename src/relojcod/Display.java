@@ -14,9 +14,9 @@ public class Display {
      * @param b minutos
      * @param c segundos
      */
-    public static void mostrar(int a,int b,int c) {
+    public static void mostrar(int a, int b, int c) {
 //        JOptionPane.showMessageDialog(null,a+":"+b+":"+c);
-        System.out.println(a+":"+b+":"+c);
+        System.out.println(a + ":" + b + ":" + c);
     }
 
 }
