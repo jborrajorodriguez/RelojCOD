@@ -33,7 +33,7 @@ public class Alarma extends TimerTask {
     public static void activar(boolean a) {
         try {
             if (RelojFun.h == hor && RelojFun.m == min && a == true) {
-                System.out.println("Alarmaaaaaaaaaa");
+                Display.sonido();
 
                 Thread.sleep(5000);
 
@@ -52,10 +52,10 @@ public class Alarma extends TimerTask {
     public static boolean encendido() {
         if (al == false) {
             al = true;
-            System.out.println("Activada");
+            Display.activada();
         } else {
             al = false;
-            System.out.println("Desactivada");
+            Display.desactivada();
         }
         return al;
     }
