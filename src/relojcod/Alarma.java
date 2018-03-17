@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class Alarma extends TimerTask {
 
     private static int h, m, s, hor, min;
-    private static boolean al=false;
+    private static boolean al = false;
 
     /**
      * Metodo Alarma
@@ -20,8 +20,8 @@ public class Alarma extends TimerTask {
      * alarma.
      */
     public static void Alarma() {
-        hor=Integer.parseInt(JOptionPane.showInputDialog("Hora de la alarma"));
-        min=Integer.parseInt(JOptionPane.showInputDialog("minutos de la alarma"));
+        hor = Integer.parseInt(JOptionPane.showInputDialog("Hora de la alarma"));
+        min = Integer.parseInt(JOptionPane.showInputDialog("minutos de la alarma"));
 
     }
 
@@ -32,14 +32,14 @@ public class Alarma extends TimerTask {
      */
     public static void activar(boolean a) {
         try {
-            if (RelojFun.h==hor&&RelojFun.m==min&&a==true) {
-                System.out.println("Alarmaaaaaaaaaa");
+            if (RelojFun.h == hor && RelojFun.m == min && a == true) {
+                Display.sonido();
 
                 Thread.sleep(5000);
 
             }
         } catch (InterruptedException ex) {
-            Logger.getLogger(Alarma.class.getName()).log(Level.SEVERE,null,ex);
+            Logger.getLogger(Alarma.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -50,12 +50,12 @@ public class Alarma extends TimerTask {
      * @return
      */
     public static boolean encendido() {
-        if(al==false){
-            al=true;
-            System.out.println("Activada");
-        }else{
-            al=false;
-            System.out.println("Desactivada");
+        if (al == false) {
+            al = true;
+            Display.activada();
+        } else {
+            al = false;
+            Display.desactivada();
         }
         return al;
     }
